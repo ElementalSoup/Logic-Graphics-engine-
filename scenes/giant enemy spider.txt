@@ -1,0 +1,30 @@
+music_name = "The Giant Enemy Spider"
+
+# Body
+add(Cube(app, tex_id=1, pos=(0,2,0), scale=(1, 1, 1.25)))
+add(Cube(app, tex_id=1, pos=(0,2,-2.75), scale=(1.5, 1.5, 1.5)))
+add(Cube(app, tex_id=1, pos=(0,2,2.05), scale=(.85, .85, .85)))
+        
+# Front legs
+add(Cube(app, tex_id=1, pos=(-2,3,1), scale=(3, .5, .5), rot=(0, 11.25,-22.5)))
+add(Cube(app, tex_id=1, pos=(-5.25,1.5,1.65), scale=(3, .5, .5), rot=(0, 11.25,67.5)))
+add(Cube(app, tex_id=1, pos=(2,3,1), scale=(3, .5, .5), rot=(0, -11.25,22.5)))
+add(Cube(app, tex_id=1, pos=(5.25,1.5,1.65), scale=(3, .5, .5), rot=(0, -11.25,-67.5)))
+
+# Middle front legs
+add(Cube(app, tex_id=1, pos=(-2,3,-.5), scale=(3, .5, .5), rot=(0, 0,-22.5)))
+add(Cube(app, tex_id=1, pos=(-5.25,1.5,-.5), scale=(3, .5, .5), rot=(0, 0,67.5)))
+add(Cube(app, tex_id=1, pos=(2,3,-.5), scale=(3, .5, .5), rot=(0, 0,22.5)))
+add(Cube(app, tex_id=1, pos=(5.25,1.5,-.5), scale=(3, .5, .5), rot=(0, 0,-67.5)))
+
+# Middle back legs
+add(Cube(app, tex_id=1, pos=(-2, 3, -2.5), scale=(3, .5, .5), rot=(0, -11.25, -22.5)))
+add(Cube(app, tex_id=1, pos=(-5.25, 1.5, -3.15), scale=(3, .5, .5), rot=(0, -11.25, 67.5)))
+add(Cube(app, tex_id=1, pos=(2, 3, -2.5), scale=(3, .5, .5), rot=(0, 11.25, 22.5)))
+add(Cube(app, tex_id=1, pos=(5.25, 1.5, -3.15), scale=(3, .5, .5), rot=(0, 11.25, -67.5)))
+
+# Back legs
+add(Cube(app, tex_id=1, pos=(-2, 3, -3.75), scale=(3, .5, .5), rot=(0, -22.5, -22.5)))
+add(Cube(app, tex_id=1, pos=(-5.25, 1.5, -5.10), scale=(3, .5, .5), rot=(0, -22.5, 67.5)))
+add(Cube(app, tex_id=1, pos=(2, 3, -3.75), scale=(3, .5, .5), rot=(0, 22.5, 22.5)))
+add(Cube(app, tex_id=1, pos=(5.25, 1.5, -5.10), scale=(3, .5, .5), rot=(0, 22.5, -67.5)))

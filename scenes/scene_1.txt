@@ -1,0 +1,117 @@
+self.light_box = ColoredCube(app, pos=self.app.light.position, scale=(.75, .75, .75), color=(1, 1, 1))
+add(self.light_box)
+
+add(ColoredCube(app, pos=(13, 0, 10), color=(0.11, 0.659, 0.384)))
+add(ColoredCube(app, pos=(10, 0, 10), color=(0.859, 0.357, 0.169)))
+add(ColoredCube(app, pos=(7, 0, 10), color=(1, 0.749, 0)))
+
+# floor
+n, s = 30, 2
+for x in range(-n, n, s):
+    for z in range(-n, n, s):
+        add(Cube(app, pos=(x, -s, z), tex_id=0))
+
+# boxes
+add(Cube(app, pos=(20, 1.5, 20), scale=(2.5, 2.5, 2.5), rot=(0, 55, 0), tex_id=1))
+add(Cube(app, pos=(21.5, .75, 15), scale=(1.75, 1.75, 1.75), rot=(0, -65, 0), tex_id=1))
+add(Cube(app, pos=(16.75, 0.165, 17), scale=(1.25, 1.25, 1.25), rot=(0, 22.5, 0), tex_id=1))
+
+# ducky!!!!
+self.spinning_duck = MovingObj(app, vao_name='duck',tex_id='duck', pos=(-10, -1, -20), scale=(.5, .5, .5), rot=(0, 0, 0))
+self.spinning_duck.add_keyframe(pos=(-10, -1, -20), scale=(.5, .5, .5), rot=(0, 0, 0), 
+                                interpolation='linear', easing='expo_in_out', duration=.01)
+self.spinning_duck.add_keyframe(pos=(-10, -1, -20), scale=(.5, .5, .5), rot=(0, 360, 0), 
+                                interpolation='linear', easing='xpo_in_out', duration=6)
+self.spinning_duck.add_keyframe(pos=(-10, -1, -20), scale=(.5, .5, .5), rot=(0, 0, 0), 
+                                interpolation='constant', easing='xpo_in_out', duration=.000000000000001)
+add(self.spinning_duck)
+
+# cola.
+add(Cola(app, pos=(-20, 7.25, 20), scale=(5,5,5), rot=(0,0,0)))
+
+# Create a MovingCube instance
+self.moving_cube = MovingObj(app, tex_id=1, vao_name='cube')
+# Add multiple keyframes with different interpolation types
+self.moving_cube.add_keyframe(pos=(0, 0, -10), rot=(0, 0, 0), scale=(1, 1, 1), 
+                              interpolation='exponential', easing='expo_out', duration=1)
+self.moving_cube.add_keyframe(pos=(0, 2, -10), rot=(0, 360, 0), scale=(1, 3, 1), 
+                              interpolation='exponential', easing='expo_in_out', duration=1)
+self.moving_cube.add_keyframe(pos=(0, 2, -10), rot=(0, 0, 0), scale=(3, 3, 3), 
+                              interpolation='exponential', easing='expo_in_out', duration=1)
+self.moving_cube.add_keyframe(pos=(0, 4, -10), rot=(0, 0, 0), scale=(1, 1, 1), 
+                              interpolation='exponential', easing='expo_in_out', duration=1)
+# Add the MovingCube instance to the scene
+add(self.moving_cube)
+
+self.rotating_cube = MovingObj(app, pos=(0, 15, 2), scale=(3, 3, 3), tex_id=3)
+self.rotating_cube.add_keyframe(pos=(0, 15, 2), rot=(0, 0, 0), scale=(1.5, 1.5, 1.5), 
+                                interpolation="exponential", easing='expo_in_out', duration=2)
+self.rotating_cube.add_keyframe(pos=(0, 15, 2), rot=(180, 180, 0), scale=(3, 3, 3), 
+                                interpolation="exponential", easing='expo_in_out', duration=2)
+self.rotating_cube.add_keyframe(pos=(0, 15, 2), rot=(0, 0, 0), scale=(1.5, 3, 1.5), 
+                                interpolation="exponential", easing='expo_in_out', duration=2)
+self.rotating_cube.add_keyframe(pos=(0, 15, 2), rot=(0, 0, 180), scale=(1.5, 1.5, 3), 
+                                interpolation="exponential", easing='expo_in_out', duration=2)
+self.rotating_cube.add_keyframe(pos=(0, 15, 2), rot=(180, 0, 180), scale=(3, 1.5, 1.5), 
+                                interpolation="exponential", easing='expo_in_out', duration=2)
+self.rotating_cube.add_keyframe(pos=(0, 15, 2), rot=(0, 0, 0), scale=(3, 3, 3), 
+                                interpolation="exponential", easing='expo_in_out', duration=.5)
+self.rotating_cube.add_keyframe(pos=(0, 15, 2), rot=(0, 0, 0), scale=(1.5, 1.5, 1.5), 
+                                interpolation="exponential", easing='expo_in_out', duration=.25)
+
+add(self.rotating_cube)
+
+# jeez
+add(Cube(app, pos=(-2, 0, 4), tex_id=2))
+add(Cube(app, pos=(2, 0, 4), tex_id=2))
+add(Cube(app, pos=(-2, 0, 0), tex_id=2))
+add(Cube(app, pos=(2, 0, 0), tex_id=2))
+self.moving_pillar1 = MovingObj(app, pos=(-2, 4, 4), tex_id=3, scale=(.75, .75, .75))
+self.moving_pillar1.add_keyframe(pos=(-2, 4, 4), rot=(0, 0, 0), scale=(.75, .75, .75), duration=2)
+self.moving_pillar1.add_keyframe(pos=(2, 4, 4), rot=(0, 90, 0), scale=(.75, .75, .75), duration=2)
+self.moving_pillar1.add_keyframe(pos=(2, 4, 0), rot=(0, 0, 0), scale=(.75, .75, .75), duration=2)
+self.moving_pillar1.add_keyframe(pos=(-2, 4, 0), rot=(0, 90, 0), scale=(.75, .75, .75), duration=2)
+add(self.moving_pillar1)
+self.moving_pillar2 = MovingObj(app, pos=(2, 4, 4), tex_id=3, scale=(.75, .75, .75))
+self.moving_pillar2.add_keyframe(pos=(2, 4, 4), rot=(0, 0, 0), scale=(.75, .75, .75), duration=2)
+self.moving_pillar2.add_keyframe(pos=(2, 4, 0), rot=(0, 90, 0), scale=(.75, .75, .75), duration=2)
+self.moving_pillar2.add_keyframe(pos=(-2, 4, 0), rot=(0, 0, 0), scale=(.75, .75, .75), duration=2)
+self.moving_pillar2.add_keyframe(pos=(-2, 4, 4), rot=(0, 90, 0), scale=(.75, .75, .75), duration=2)
+add(self.moving_pillar2)
+self.moving_pillar3 = MovingObj(app, pos=(2, 4, 0), tex_id=3, scale=(.75, .75, .75))
+
+self.moving_pillar3.add_keyframe(pos=(2, 4, 0), rot=(0, 0, 0), scale=(.75, .75, .75), duration=2)
+self.moving_pillar3.add_keyframe(pos=(-2, 4, 0), rot=(0, 90, 0), scale=(.75, .75, .75), duration=2)
+self.moving_pillar3.add_keyframe(pos=(-2, 4, 4), rot=(0, 0, 0), scale=(.75, .75, .75), duration=2)
+self.moving_pillar3.add_keyframe(pos=(2, 4, 4), rot=(0, 90, 0), scale=(.75, .75, .75), duration=2)
+
+add(self.moving_pillar3)
+self.moving_pillar4 = MovingObj(app, pos=(2, 4, 0), tex_id=3, scale=(.75, .75, .75))
+
+self.moving_pillar4.add_keyframe(pos=(-2, 4, 0), rot=(0, 0, 0), scale=(.75, .75, .75), duration=2)
+self.moving_pillar4.add_keyframe(pos=(-2, 4, 4), rot=(0, 90, 0), scale=(.75, .75, .75), duration=2)
+self.moving_pillar4.add_keyframe(pos=(2, 4, 4), rot=(0, 0, 0), scale=(.75, .75, .75), duration=2)
+self.moving_pillar4.add_keyframe(pos=(2, 4, 0), rot=(0, 90, 0), scale=(.75, .75, .75), duration=2)
+
+add(self.moving_pillar4)
+
+add(Cube(app, pos=(-2, 2, 4), tex_id=2, scale=(.75, 1, .75)))
+add(Cube(app, pos=(2, 2, 4), tex_id=2, scale=(.75, 1, .75)))
+add(Cube(app, pos=(-2, 2, 0), tex_id=2, scale=(.75, 1, .75)))
+add(Cube(app, pos=(2, 2, 0), tex_id=2, scale=(.75, 1, .75)))
+add(Cube(app, pos=(-2, 6, 4), tex_id=2, scale=(.75, 1, .75)))
+add(Cube(app, pos=(2, 6, 4), tex_id=2, scale=(.75, 1, .75)))
+add(Cube(app, pos=(-2, 6, 0), tex_id=2, scale=(.75, 1, .75)))
+add(Cube(app, pos=(2, 6, 0), tex_id=2, scale=(.75, 1, .75)))
+add(Cube(app, pos=(-2, 8, 4), tex_id=2, scale=(.75, 1, .75)))
+add(Cube(app, pos=(2, 8, 4), tex_id=2, scale=(.75, 1, .75)))
+add(Cube(app, pos=(-2, 8, 0), tex_id=2, scale=(.75, 1, .75)))
+add(Cube(app, pos=(2, 8, 0), tex_id=2, scale=(.75, 1, .75)))
+add(Cube(app, pos=(-2, 10, 4), tex_id=2))
+add(Cube(app, pos=(2, 10, 4), tex_id=2))
+add(Cube(app, pos=(-2, 10, 0), tex_id=2))
+add(Cube(app, pos=(2, 10, 0), tex_id=2))
+add(Cube(app, pos=(2, 10, 2), tex_id=2, scale=(.75, .75, 1)))
+add(Cube(app, pos=(-2, 10, 2), tex_id=2, scale=(.75, .75, 1)))
+add(Cube(app, pos=(0, 10, 0), tex_id=2, scale=(.75, .75, 1), rot=(0, 90, 0)))
+add(Cube(app, pos=(0, 10, 4), tex_id=2, scale=(.75, .75, 1), rot=(0, 90, 0)))
