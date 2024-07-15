@@ -1,4 +1,4 @@
-# Logic-Graphics-engine-
+# Logic Graphics engine
 its a graphics engine with customizable scenes
 
 # Dependencies
