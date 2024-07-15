@@ -1,16 +1,14 @@
 # Logic-Graphics-engine-
 its a graphics engine with customizable scenes
 
-|Dependencies|:
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# Dependencies
 •moderngl
 •pygame
 •glm
 •numpy
 •pywavefront
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-||scene building & framework||:
+# scene building & framework
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 to quickly add a model without animation, you would use this:
 
@@ -37,17 +35,16 @@ i have added two models: duck and cola, these names can be in place of "cube" wh
 ex:
 add(Cola(app, pos=(0, 0, 0), scale=(1, 1, 1), rot=(0, 0, 0)))
 
-|animated objects|:
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# Animated Objects
 to add an animated object, first you must define what it is (be sure to add "self." at the beginning):
 
-# Create a MovingCube instance
+//Create a MovingCube instance
 self.moving_obj = MovingOBJ(app, tex_id, vao_name='cube')
 
 vao_name is just defining which model to use, and "moving_obj" is just a name i chose for this example, you can use whatever name as long as you reference it exactly when adding keyframes
 after defining it, you add keyframes, this is what that would look like:
 
-# Add multiple keyframes
+//Add multiple keyframes
 self.moving_obj.add_keyframe(pos=(0, 0, 0), rot=(0, 0, 0), scale=(1, 1, 1), interpolation='linear', easing='expo_in_out', duration=1)
 self.moving_obj.add_keyframe(pos=(0, 10, 0), rot=(0, 0, 0), scale=(1, 1, 1), interpolation='linear', easing='expo_in_out', duration=1)
 
@@ -70,18 +67,18 @@ add(self.moving_obj)
 
 here is an example scene:
 
-# Create a MovingCube instance
+//Create a MovingCube instance
 self.moving_cube = MovingObj(app, tex_id=1, vao_name='cube')
-# Add multiple keyframes with different interpolation types
+//Add multiple keyframes with different interpolation types
 self.moving_cube.add_keyframe(pos=(0, 0, -10), rot=(0, 0, 0), scale=(1, 1, 1), interpolation='exponential', easing='expo_out', duration=1)
 self.moving_cube.add_keyframe(pos=(0, 2, -10), rot=(0, 360, 0), scale=(1, 3, 1), interpolation='exponential', easing='expo_in_out', duration=1)
 self.moving_cube.add_keyframe(pos=(0, 2, -10), rot=(0, 0, 0), scale=(3, 3, 3), interpolation='exponential', easing='expo_in_out', duration=1)
 self.moving_cube.add_keyframe(pos=(0, 4, -10), rot=(0, 0, 0), scale=(1, 1, 1), interpolation='exponential', easing='expo_in_out', duration=1)
-# Add the MovingCube instance to the scene
+//Add the MovingCube instance to the scene
 add(self.moving_cube)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-here is a list of the model types:
+
+# model types
 
 •Cube
 •Colored cube (be sure to add color when setting the orientation, instead of texture, use 0-1 rgb)
@@ -89,8 +86,7 @@ here is a list of the model types:
 •Duck
 •Cola
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
+# Background Music
 last but not least, if you want to add custom audio to your scene, that isn't the boss jazz i have set it to by default, add your audio file to the "music folder" (wav only), and add this line to your scene at the top:
 
 music_name = "audio file name"
