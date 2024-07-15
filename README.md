@@ -37,34 +37,35 @@ add(Cola(app, pos=(0, 0, 0), scale=(1, 1, 1), rot=(0, 0, 0)))
 # Animated Objects
 to add an animated object, first you must define what it is (be sure to add "self." at the beginning):
 
-//Create a MovingCube instance
 self.moving_obj = MovingOBJ(app, tex_id, vao_name='cube')
 
 vao_name is just defining which model to use, and "moving_obj" is just a name i chose for this example, you can use whatever name as long as you reference it exactly when adding keyframes
 after defining it, you add keyframes, this is what that would look like:
 
-//Add multiple keyframes
 self.moving_obj.add_keyframe(pos=(0, 0, 0), rot=(0, 0, 0), scale=(1, 1, 1), interpolation='linear', easing='expo_in_out', duration=1)
 self.moving_obj.add_keyframe(pos=(0, 10, 0), rot=(0, 0, 0), scale=(1, 1, 1), interpolation='linear', easing='expo_in_out', duration=1)
 
+# object movement types
 the orientation is the same, but as you can see there are some new unfamiliar parts to address,
 interpolation is the way the object moves, the three types are:
 •constant, the object changing instantly
 •linear, the object changing at a consistent pace 
 •exponential, the object changing with easing, which i personally find alot smoother
 
-only exponential uses the easy option, the easing types are:
+# easing types
+only exponential uses the easy types, the easing types are:
 •Expo_in, easing into the keyframe
 •expo_out, easing out of the previous keyframe
 •expo_in_out, easing out of the previous keyframe, and easing into the current one
 
 the duration just defines how long it should take to reach that keyframe
 
+# add the instance to the scene
 the last thing to do is add it to the scene with the name you chose to define the animated object:
 
 add(self.moving_obj)
 
-here is an example scene:
+# Example Scene
 
 //Create a MovingCube instance
 self.moving_cube = MovingObj(app, tex_id=1, vao_name='cube')
