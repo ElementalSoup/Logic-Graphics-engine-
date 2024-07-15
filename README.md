@@ -9,7 +9,6 @@ its a graphics engine with customizable scenes
 •pywavefront
 
 # scene building & framework
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 to quickly add a model without animation, you would use this:
 
 add(Cube(app, pos=(0, 0, 0), scale=(1, 1, 1), rot=(0, 0, 0), tex_id=1))
