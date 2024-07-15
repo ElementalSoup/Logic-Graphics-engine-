@@ -90,3 +90,9 @@ add(self.moving_cube)
 last but not least, if you want to add custom audio to your scene, that isn't the boss jazz i have set it to by default, add your audio file to the "music folder" (wav only), and add this line to your scene at the top:
 
 music_name = "audio file name"
+
+p.s if you hate the background music, just press m to toggle the music on or off
+
+# adding and using your custom scene
+
+to add and use your custom scene, save the scene as a txt document in the "scenes" folder, then, inside scene.py, on line 49, inside self.get_scene('scene_1'), replace scene_1 with the scene you are trying to use, you'll already see two scenes in the folder, and you just need to use your scene's name.
